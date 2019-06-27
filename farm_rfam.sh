@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE=/var/tmp/$(uuid)
+BASE=$(uuid)
 export NXF_HOME=${BASE}/home
 export NXF_WORK=${BASE}/work
 export NXF_TEMP=${BASE}/temp
