@@ -1,9 +1,7 @@
-params.query = "/home/vagrant/dev/uli/test_sample.fasta"
 params.chunk_size = '8000'
 params.chunk_overlap = '50'
 params.blastdb = "/data/rfam/11/Rfam.fasta" 
 params.cm = "/data/rfam/11/Rfam.cm"
-params.output = "/home/vagrant/dev/uli/results"
 
 Channel
     .fromPath(params.query)
