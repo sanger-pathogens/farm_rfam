@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE=./$(uuid)
+BASE=/var/tmp/$(uuid)
 export NXF_HOME=${BASE}/home
 export NXF_WORK=${BASE}/work
 export NXF_TEMP=${BASE}/temp
@@ -72,10 +72,13 @@ then
 fi
 
 #Run nextflow
+CURRENT_DIR=$(pwd)
+cd ${BASE}
 nextflow -log $LOGFILE -c ${FARM_RFAM_NEXTFLOW_CONFIG} run "/opt/farm-rfam/rfam.nf" -profile $PROFILE --query $QUERY --output $OUTPUT
+cd $CURRENT_DIR
 
 #cleanup
-if [[ "DEBUG" != "YES" ]] 
+if [[ "$DEBUG" != "YES" ]] 
 then
 	rm -rf ${BASE}
 fi
