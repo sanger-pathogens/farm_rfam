@@ -46,6 +46,10 @@ process rfam_scan {
 
 process merge_rfam_result {
 
+   memory { 1.GB * task.attempt }
+   errorStrategy { 'retry' }
+   maxRetries 3
+
    input:
       file rfam_annotations_unclean_unsorted_chunked from rfam_scan_outputs.collectFile(name: 'rfam_annotations_unclean_unsorted_chunked.txt')
 
@@ -58,7 +62,11 @@ process merge_rfam_result {
 }
 
 process dechunk_rfam_result {
+
    publishDir "$params.output", mode: 'copy', overwrite: false
+   memory { 1.GB * task.attempt }
+   errorStrategy { 'retry' }
+   maxRetries 3
 
    input:
       file 'rfam_annotations_clean_sorted_chunked.txt' from rfam_merged_outputs
