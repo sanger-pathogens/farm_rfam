@@ -1,0 +1,2 @@
+SomeSequence_8000001-8016090	Rfam	similarity	2847	2928	57.83	-	1	evalue=3.47e-12;gc-content=51;id=tRNA.1;model_end=71;model_start=1;rfam-acc=RF00005;rfam-id=tRNA
+SomeSequence_8000001-8016090	Rfam	similarity	13483	13562	50.51	+	1	evalue=1.31e-10;gc-content=64;id=tRNA.1;model_end=71;model_start=1;rfam-acc=RF00005;rfam-id=tRNA
