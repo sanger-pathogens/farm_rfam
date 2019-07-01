@@ -54,6 +54,17 @@ farm_rfam.sh -l <fasta_query_file>
 ```
 This will disable the use of the farm.
 
+## Development under vagrant
+### To run under vagrant
+```
+/vagrant/farm_rfam.sh -o results /vagrant/test_data/query.fasta
+```
+
+### Vagrant setup
+There are 3 important setups in vagrant that allows farm_rfam to run locally:
+  * /vagrant is symbolically linked to /opt/farm-rfam
+  * The PATH for vagrant user is altered to include /opt/blast-2.2.25/bin/ /opt/infernal/bin/ /opt/nextflow/ opt/rfam/ and /opt/farm-rfam
+  * The FARM_RFAM_NEXTFLOW_CONFIG variable for vagrant user is altered to /vagrant/test_config.conf
 
 ## Tests and continuous integration
 
