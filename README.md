@@ -22,6 +22,7 @@ This software, based on nextflow and rfam_scan.pl (RFAM 11), splits the query fi
 farm_rfam has the folloing pre requisite:
  * nextflow version 19.04.1.5072 or compatible
  * RFAM 11
+
 Both of these have their own dependencies.  See Vagrantfile for details of ubuntu installation.
    
 ### From github
